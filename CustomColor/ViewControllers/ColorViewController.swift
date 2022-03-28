@@ -8,7 +8,9 @@
 import UIKit
 
 protocol ColorSettingsViewControllerDelegate {
+    
     var currentBackgroundColor: UIColor { get }
+    
     func setBackground(color: UIColor)
 }
 
@@ -26,9 +28,11 @@ class ColorViewController: UIViewController {
 }
 
 extension ColorViewController: ColorSettingsViewControllerDelegate {
+    
     var currentBackgroundColor: UIColor {
         view.backgroundColor ?? .systemGray
     }
+    
     func setBackground(color: UIColor) {
         view.backgroundColor = color
     }
