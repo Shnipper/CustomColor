@@ -23,7 +23,6 @@ class ColorSettingsViewController: UIViewController {
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
     
-    var mainColor: UIColor!
     var delegate: ColorSettingsViewControllerDelegate!
     
     override func viewDidLoad() {
@@ -55,9 +54,9 @@ class ColorSettingsViewController: UIViewController {
     }
     
     private func changeColorSettings() {
-        redSlider.value = Float(mainColor.redValue)
-        greenSlider.value = Float(mainColor.greenValue)
-        blueSlider.value = Float(mainColor.blueValue)
+        redSlider.value = Float(delegate.currentBackgroundColor.redValue)
+        greenSlider.value = Float(delegate.currentBackgroundColor.greenValue)
+        blueSlider.value = Float(delegate.currentBackgroundColor.blueValue)
         
         valueChanged()
     }
